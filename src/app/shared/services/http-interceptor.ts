@@ -20,7 +20,6 @@ export class MyHttpInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const token: string = localStorage.getItem('token');
-    console.log(token);
 
 
 
