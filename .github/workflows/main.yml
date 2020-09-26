@@ -1,0 +1,17 @@
+version: 0.0
+os: linux
+files:
+  - source: /index.html
+    destination: /var/www/html/codeVianFrontend/dist/codeVianFrontend/
+hooks:
+  BeforeInstall:
+    - location: scripts/installDependencies
+      timeout: 300
+      runas: root
+    - location: scripts/startServer
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stopServer
+      timeout: 300
+      runas: root
